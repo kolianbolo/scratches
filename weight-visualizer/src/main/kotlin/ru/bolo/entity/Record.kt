@@ -1,14 +1,19 @@
 package ru.bolo.entity
 
+import java.time.Instant
+import javax.persistence.Column
 import javax.persistence.Entity
 import javax.persistence.Id
-import java.time.Instant
 
 @Entity
 class Record() {
 
     @Id
     val id: Long? = null
-    val weight: Double? = null
+
+    @Column
+    val weight: Integer? = null //вес, в граммах 
+
+    @Column
     val date: Instant? = null
 }
