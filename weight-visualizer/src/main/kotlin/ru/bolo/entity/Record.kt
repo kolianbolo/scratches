@@ -6,13 +6,13 @@ import javax.persistence.Entity
 import javax.persistence.Id
 
 @Entity
-class Record() {
+class Record {
 
     @Id
     val id: Long? = null
 
     @Column
-    val weight: Integer? = null //вес, в граммах 
+    val weight: Integer? = null //вес, в граммах
 
     @Column
     val date: Instant? = null
