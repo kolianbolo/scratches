@@ -9,11 +9,11 @@ import javax.persistence.Id
 class Record {
 
     @Id
-    val id: Long? = null
+    var id: Long? = null
 
     @Column
-    val weight: Integer? = null //вес, в граммах
+    var weight: Integer? = null //вес, в граммах
 
     @Column
-    val date: Instant? = null
+    var date: Instant? = null
 }
