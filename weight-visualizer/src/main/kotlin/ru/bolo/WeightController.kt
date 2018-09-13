@@ -17,9 +17,7 @@ class WeightController{
 
     @PostMapping
     fun saveMeasure(weight : Integer){
-        recordRepository.save(Record().apply {
-            this.weight = weight;
-            this.date = Instant.now() }
+        recordRepository.save(Record(weight = weight, date = Instant.now() )
         )
     }
 

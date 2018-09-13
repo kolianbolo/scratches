@@ -3,17 +3,20 @@ package ru.bolo.entity
 import java.time.Instant
 import javax.persistence.Column
 import javax.persistence.Entity
+import javax.persistence.GeneratedValue
 import javax.persistence.Id
 
 @Entity
-class Record {
+class Record(
 
-    @Id
-    var id: Long? = null
+        @field:Id
+        @field:Column
+        @field:GeneratedValue
+        var id: Long? = null,
 
-    @Column
-    var weight: Integer? = null //вес, в граммах
+        @field:Column
+        var weight: Integer? = null, //вес, в граммах
 
-    @Column
-    var date: Instant? = null
-}
+        @field:Column
+        var date: Instant? = null
+)
