@@ -17,14 +17,11 @@ class WeightController{
 
     @PostMapping
     fun saveMeasure(weight : Integer){
-        recordRepository.save(Record(weight = weight, date = Instant.now() )
-        )
+        recordRepository.save(Record(weight = weight, date = Instant.now() ))
     }
 
     @GetMapping
-    fun getWeight(){
-
+    fun getWeight(): List<Record>{
+        return recordRepository.get()
     }
-
-
 }
