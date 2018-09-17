@@ -1,9 +1,12 @@
 package ru.bolo
 
-public class ServiceTest{
+import junit.framework.TestCase.assertEquals
+import org.junit.Test
+
+class ServiceTest {
 
     @Test
-    fun test(){
-        assertEqualt(2, 3, "ОЛОЛО");
+    fun test() {
+        assertEquals("ололо", 2, 2)
     }
 }
