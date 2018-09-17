@@ -10,18 +10,18 @@ import java.time.Instant
 
 @RestController
 @RequestMapping("/weight")
-class WeightController{
+class WeightController {
 
     @Autowired
     lateinit var recordRepository: RecordRepository
 
     @PostMapping
-    fun saveMeasure(weight : Integer){
-        recordRepository.save(Record(weight = weight, date = Instant.now() ))
+    fun saveMeasure(weight: Int) {
+        recordRepository.save(Record(weight = weight, date = Instant.now()))
     }
 
     @GetMapping
-    fun getWeight(): List<Record>{
-        return recordRepository.get()
+    fun getWeight(): List<Record> {
+        return recordRepository.findAll().toList()
     }
 }

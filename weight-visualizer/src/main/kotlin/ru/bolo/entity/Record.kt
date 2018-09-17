@@ -7,7 +7,7 @@ import javax.persistence.GeneratedValue
 import javax.persistence.Id
 
 @Entity
-class Record(
+data class Record(
 
         @field:Id
         @field:Column
@@ -15,7 +15,7 @@ class Record(
         var id: Long? = null,
 
         @field:Column
-        var weight: Integer? = null, //вес, в граммах
+        var weight: Int? = null, //вес, в граммах
 
         @field:Column
         var date: Instant? = null
