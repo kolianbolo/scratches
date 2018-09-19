@@ -13,6 +13,6 @@ data class Session(
         var id: String?,
 
         @field:OneToOne(fetch = FetchType.EAGER)
-        var customer: Customer?,
+        var customer: User?,
         var expire: Instant?
 )

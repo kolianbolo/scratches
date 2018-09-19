@@ -4,7 +4,7 @@ import javax.persistence.Column
 import javax.persistence.GeneratedValue
 import javax.persistence.Id
 
-data class Customer(
+data class User(
         @field:Id
         @field:Column
         @field:GeneratedValue
