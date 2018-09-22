@@ -10,9 +10,10 @@ data class Session(
 
         @field:Id
         @field:Column
-        var id: String?,
+        var id: String? = null,
 
         @field:OneToOne(fetch = FetchType.EAGER)
-        var customer: User?,
-        var expire: Instant?
+        var customer: User? = null,
+
+        var expire: Instant? = null
 )
