@@ -1,11 +1,9 @@
 package ru.bolo.entity
 
 import java.time.Instant
-import javax.persistence.Column
-import javax.persistence.FetchType
-import javax.persistence.Id
-import javax.persistence.OneToOne
+import javax.persistence.*
 
+@Entity
 data class Session(
 
         @field:Id
