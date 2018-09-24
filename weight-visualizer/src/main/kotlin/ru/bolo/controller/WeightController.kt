@@ -1,12 +1,9 @@
-package ru.bolo
+package ru.bolo.controller
 
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 import ru.bolo.entity.Record
-import ru.bolo.repositories.RecordRepository
+import ru.bolo.repository.RecordRepository
 import java.time.Instant
 
 @RestController
@@ -22,7 +19,7 @@ class WeightController {
     }
 
     @GetMapping
-    fun getWeight(): List<Record> {
+    fun getMeasures(): List<Record> {
         return recordRepository.findAll().toList()
     }
 }

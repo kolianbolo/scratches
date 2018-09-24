@@ -14,6 +14,6 @@ data class User(
 
         val login: String?,
 
-        //TODO: Fix store naked passwords
+        //TODO: Fix store naked password
         var password: String?
 )
