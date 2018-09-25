@@ -3,14 +3,15 @@ package ru.bolo.controller
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
+import ru.bolo.model.RegisterModel
 
 @RestController
-@RequestMapping("/login")
-class LoginController {
+@RequestMapping("/register")
+class RegisterConroller{
 
     @PostMapping
-    fun login(login: String, password: String): String {
-        return ""
+    fun register(model : RegisterModel){
+
     }
 
 }
