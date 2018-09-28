@@ -16,7 +16,7 @@
         </encoder>
     </appender>
 
-    <root level="TRACING">
+    <root level="TRACE">
         <appender-ref ref="CONSOLE" />
     </root>
 </included>
