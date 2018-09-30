@@ -1,22 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<included>
+<configuration>
     <include resource="org/springframework/boot/logging/logback/defaults.xml" />
-    <!--<property name="LOG_FILE" value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}}/spring.log}"/>-->
-    <!--<include resource="org/springframework/boot/logging/logback/console-appender.xml" />-->
-    <!--<include resource="org/springframework/boot/logging/logback/file-appender.xml" />-->
-    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
-        <!-- On Windows machines setting withJansi to true enables ANSI
-             color code interpretation by the Jansi library. This requires
-             org.fusesource.jansi:jansi:1.8 on the class path.  Note that
-             Unix-based operating systems such as Linux and Mac OS X
-             support ANSI color codes by default. -->
-        <withJansi>true</withJansi>
-        <encoder>
-            <pattern>[%thread] %highlight(%-5level) %cyan(%logger{15}) - %msg %n</pattern>
-        </encoder>
-    </appender>
-
-    <root level="TRACE">
-        <appender-ref ref="CONSOLE" />
-    </root>
-</included>
+</configuration>
