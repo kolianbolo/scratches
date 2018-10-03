@@ -10,10 +10,10 @@ data class User(
         @field:Id
         @field:Column
         @field:GeneratedValue
-        var id: Long?,
+        var id: Long? = null,
 
-        val login: String?,
+        val login: String,
 
         //TODO: Fix store naked password
-        var password: String?
+        var password: String
 )

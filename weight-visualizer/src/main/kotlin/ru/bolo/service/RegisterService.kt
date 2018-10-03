@@ -12,7 +12,7 @@ class RegisterService : IRegisterService {
     @Autowired
     lateinit var userRepository: UserRepository
 
-    override fun register(login: String, password: String): Boolean {
+    override fun register(login: String, password: String) {
         userRepository.save(User(login = login, password = password))
     }
 }
