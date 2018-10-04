@@ -16,7 +16,9 @@ class RegisterConroller {
 
     @PostMapping
     fun register(model: RegisterModel) {
-
+        val login: String = model.login ?: throw NullPointerException("login is null")
+        val password: String = model.password ?: throw NullPointerException("password is null")
+        registerService.register(login, password)
     }
 
 }
