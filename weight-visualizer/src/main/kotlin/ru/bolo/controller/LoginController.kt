@@ -10,7 +10,13 @@ class LoginController {
 
     @PostMapping
     fun login(login: String, password: String): String {
-        return ""
+        if(check(login, password)){
+
+        }
+    }
+
+    private fun check(login: String, password: String): Boolean{
+        return true
     }
 
 }

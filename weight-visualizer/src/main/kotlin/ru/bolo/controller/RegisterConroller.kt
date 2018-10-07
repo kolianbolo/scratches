@@ -18,7 +18,7 @@ class RegisterConroller {
     @Autowired
     lateinit var registerService: IRegisterService
 
-    var digest = MessageDigest.getInstance("SHA-256")
+    private var digest = MessageDigest.getInstance("SHA-256")
 
     @PostMapping
     fun register(model: RegisterModel) {
