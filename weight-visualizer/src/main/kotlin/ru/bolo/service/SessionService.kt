@@ -12,8 +12,11 @@ class SessionService : ISessionService {
     private lateinit var sessionRepository: SessionRepository
 
     override fun createSession(user: User): Session {
-        //TODO: только тут userId
-        sessionRepository.findById(user.id)
+        return user.id?.let {
+            val expiredSession = sessionRepository.findByUserId(it)
+            sessionRepository.delete(expiredSession)
+            sessionRepository.save(Session(customer = user))
+        } ?: throw IllegalStateException("User.id must not be null")
     }
 
 }
