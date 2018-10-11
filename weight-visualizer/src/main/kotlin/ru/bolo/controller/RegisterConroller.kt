@@ -5,10 +5,7 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 import ru.bolo.model.RegisterModel
-import ru.bolo.service.intf.IRegisterService
-import java.nio.charset.StandardCharsets
-import java.security.MessageDigest
-import java.util.*
+import ru.bolo.service.intf.ISessionService
 
 
 @RestController
@@ -16,16 +13,13 @@ import java.util.*
 class RegisterConroller {
 
     @Autowired
-    lateinit var registerService: IRegisterService
-
-    private var digest = MessageDigest.getInstance("SHA-256")
+    lateinit var registerService: ISessionService
 
     @PostMapping
     fun register(model: RegisterModel) {
         val login: String = model.login ?: throw NullPointerException("login is null")
         val password: String = model.password ?: throw NullPointerException("password is null")
-        val hash = digest.digest(password.toByteArray(StandardCharsets.UTF_8))
-        registerService.register(login, Base64.getEncoder().encodeToString(hash))
+        registerService.register(login, password)
     }
 
 }

@@ -4,5 +4,5 @@ import org.springframework.data.repository.CrudRepository
 import ru.bolo.entity.Session
 
 interface SessionRepository : CrudRepository<Session, String> {
-    fun findByUserId(userId: Long) : Session
+    fun findByCustomer(userId: Long) : Session
 }
