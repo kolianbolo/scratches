@@ -24,9 +24,12 @@ class SessionService : ISessionService {
 
     override fun createSession(user: User): Session {
         return user.id?.let {
-            val expiredSession = sessionRepository.findByCustomer(it)
-            sessionRepository.delete(expiredSession)
-            sessionRepository.save(Session(customer = user))
+            //TODO: customer не
+            val expiredSessions = sessionRepository.findAllByCustomer(user)
+            if (expiredSessions.count() > 0) {
+                sessionRepository.deleteAll(expiredSessions)
+            }
+            sessionRepository.save(Session(id = UUID.randomUUID().toString(), customer = user))
         } ?: throw IllegalStateException("User.id must not be null")
     }
 
