@@ -12,8 +12,8 @@ data class User(
         @field:GeneratedValue
         var id: Long? = null,
 
-        val login: String,
+        var login: String? = null,
 
         //TODO: Fix store naked password
-        var password: String
+        var password: String? = null
 )
