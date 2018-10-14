@@ -24,7 +24,6 @@ class SessionService : ISessionService {
 
     override fun createSession(user: User): Session {
         return user.id?.let {
-            //TODO: customer не
             val expiredSessions = sessionRepository.findAllByCustomer(user)
             if (expiredSessions.count() > 0) {
                 sessionRepository.deleteAll(expiredSessions)

@@ -1,10 +1,7 @@
 package ru.bolo.entity
 
 import java.time.Instant
-import javax.persistence.Column
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.Id
+import javax.persistence.*
 
 @Entity
 data class Record(
@@ -18,5 +15,8 @@ data class Record(
         var weight: Int? = null, //вес, в граммах
 
         @field:Column
-        var date: Instant? = null
+        var date: Instant? = null,
+
+        @field:ManyToOne(fetch = FetchType.EAGER)
+        var user: User? = null
 )
