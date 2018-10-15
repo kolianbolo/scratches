@@ -26,7 +26,8 @@ class WeightController {
     }
 
     @GetMapping
-    fun getMeasures(): List<Record> {
+    fun getMeasures(@RequestHeader("sessionId") sessionId: String): List<Record> {
+        sessionRepository.findById(sessionId).orElseThrow { RuntimeException("Don't find session by id = $sessionId") }
         return recordRepository.findAll().toList()
     }
 }
