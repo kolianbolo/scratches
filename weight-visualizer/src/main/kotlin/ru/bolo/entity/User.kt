@@ -14,6 +14,5 @@ data class User(
 
         var login: String? = null,
 
-        //TODO: Fix store naked password
         var password: String? = null
 )

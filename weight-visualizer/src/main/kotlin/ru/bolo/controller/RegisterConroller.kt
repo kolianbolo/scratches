@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RestController
 import ru.bolo.model.RegisterModel
 import ru.bolo.service.intf.ISessionService
 
-
 @RestController
 @RequestMapping("/register")
 class RegisterConroller {
@@ -21,5 +20,4 @@ class RegisterConroller {
         val password: String = model.password ?: throw NullPointerException("password is null")
         registerService.register(login, password)
     }
-
 }

@@ -12,5 +12,4 @@ class HealthController{
     fun getHealhStatus(): String{
         return "alive"
     }
-
 }
